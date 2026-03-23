@@ -14,13 +14,14 @@ public class App {
         System.out.println("Merge Sort: " + java.util.Arrays.toString(mergeSort(testArray)));
 
         // 2
-        System.out.println("Max Value: " + maxVal1(testArray2, testArray2.length));
+        // System.out.println("Max Value: " + maxVal1(testArray2, testArray2.length));
 
-        //3
-        System.out.println("Max Value (Divide and Conquer): " + maxVal2(testArray2, testArray2.length));
+        // 3
+        // System.out.println("Max Value (Divide and Conquer): " + maxVal2(testArray2,
+        // testArray2.length));
 
-        //4
-        System.out.println("Multiply: " + multiply(10, 10));
+        // 4
+        // System.out.println("Multiply: " + multiply(10, 10));
 
     }
 
@@ -51,6 +52,7 @@ public class App {
         // `
 
         if (arr.length <= 1) {
+            System.out.println("Base case reached with array: " + java.util.Arrays.toString(arr));
             return arr;
         } else {
             int mid = arr.length / 2;
@@ -58,9 +60,11 @@ public class App {
             int[] right = new int[arr.length - mid];
             for (int i = 0; i < mid; i++) {
                 left[i] = arr[i];
+                System.out.println("Left array at index " + i + ": " + left[i]);
             }
             for (int i = mid; i < arr.length; i++) {
                 right[i - mid] = arr[i];
+                System.out.println("Right array at index " + (i - mid) + ": " + right[i - mid]);
             }
             left = mergeSort(left);
             right = mergeSort(right);

@@ -87,3 +87,4 @@
   Ajuste a assinatura da sua implementação para receber tipo inteiros long (em java).
       
 5. Monte uma tabela com os resultados das execuções acima. As linhas da tabela são os algoritmos implementados, as colunas o tamanho dos vetores usados para testar e contabilizar.
+(número de recursões de cada execução)

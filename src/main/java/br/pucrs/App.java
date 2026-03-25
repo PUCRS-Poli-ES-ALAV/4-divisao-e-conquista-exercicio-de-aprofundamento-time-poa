@@ -5,27 +5,60 @@ package br.pucrs;
  *
  */
 public class App {
+    static int iterations = 0;
+
     public static void main(String[] args) {
+        java.time.LocalDateTime startTime, endTime;
         System.out.println("Hello World!");
         int[] testArray = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
         long[] testArray2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         // 1
-        // System.out.println("Merge Sort: " +
+        // System.out.println("Tamanho do array: " + testArray.length);
+        // startTime = java.time.LocalDateTime.now();
+        // System.out.println("Resultado Merge Sort: " +
         // java.util.Arrays.toString(mergeSort(testArray)));
+        // endTime = java.time.LocalDateTime.now();
+        // java.time.Duration duration = java.time.Duration.between(startTime, endTime);
+        // System.out.println("Tempo gasto: " + duration.toMillis() + " ms");
+        // System.out.println("Número de iterações: " + iterations);
 
         // 2
-        // System.out.println("Max Value: " + maxVal1(testArray2, testArray2.length));
+        // System.out.println("Tamanho do array: " + testArray2.length);
+        // startTime = java.time.LocalDateTime.now();
+        // System.out.println("Resultado Max Value: " + maxVal1(testArray2,
+        // testArray2.length));
+        // endTime = java.time.LocalDateTime.now();
+        // java.time.Duration duration = java.time.Duration.between(startTime, endTime);
+        // System.out.println("Tempo gasto: " + duration.toMillis() + " ms");
+        // System.out.println("Número de iterações: " + iterations);
 
         // 3
-        // System.out.println("Max Value (Divide and Conquer): " + maxVal2(testArray2,
+        // System.out.println("Tamanho do array: " + testArray2.length);
+        // startTime = java.time.LocalDateTime.now();
+        // System.out.println("Resultado Max Value (Divide and Conquer): " +
+        // maxVal2(testArray2,
         // testArray2.length));
+        // endTime = java.time.LocalDateTime.now();
+        // java.time.Duration duration = java.time.Duration.between(startTime, endTime);
+        // System.out.println("Tempo gasto: " + duration.toMillis() + " ms");
+        // System.out.println("Número de iterações: " + iterations);
 
         // 4.1
-        // System.out.println("Multiply: " + multiply(10, 10));
+        // startTime = java.time.LocalDateTime.now();
+        // System.out.println("Resultado Multiply: " + multiply(10, 10));
+        // endTime = java.time.LocalDateTime.now();
+        // java.time.Duration duration = java.time.Duration.between(startTime, endTime);
+        // System.out.println("Tempo gasto: " + duration.toMillis() + " ms");
+        // System.out.println("Número de iterações: " + iterations);
 
         // 4.2
-        System.out.println("Multiply Strings: " + multiply("111", "101"));
+        // startTime = java.time.LocalDateTime.now();
+        // System.out.println("Resultado Multiply Strings: " + multiply("111", "101"));
+        // endTime = java.time.LocalDateTime.now();
+        // java.time.Duration duration = java.time.Duration.between(startTime, endTime);
+        // System.out.println("Tempo gasto: " + duration.toMillis() + " ms");
+        // System.out.println("Número de iterações: " + iterations);
 
     }
 
@@ -54,9 +87,9 @@ public class App {
         // L ← MERGE(A, B).
         // RETURN L.
         // `
+        iterations++;
 
         if (arr.length <= 1) {
-            System.out.println("Base case reached with array: " + java.util.Arrays.toString(arr));
             return arr;
         } else {
             int mid = arr.length / 2;
@@ -64,11 +97,11 @@ public class App {
             int[] right = new int[arr.length - mid];
             for (int i = 0; i < mid; i++) {
                 left[i] = arr[i];
-                System.out.println("Left array at index " + i + ": " + left[i]);
+                iterations++;
             }
             for (int i = mid; i < arr.length; i++) {
                 right[i - mid] = arr[i];
-                System.out.println("Right array at index " + (i - mid) + ": " + right[i - mid]);
+                iterations++;
             }
             left = mergeSort(left);
             right = mergeSort(right);
@@ -82,15 +115,20 @@ public class App {
         while (i < left.length && j < right.length) {
             if (left[i] < right[j]) {
                 result[k++] = left[i++];
+                iterations++;
             } else {
                 result[k++] = right[j++];
+                iterations++;
             }
         }
         while (i < left.length) {
             result[k++] = left[i++];
+            iterations++;
+
         }
         while (j < right.length) {
             result[k++] = right[j++];
+            iterations++;
         }
         return result;
     }
@@ -121,6 +159,7 @@ public class App {
         for (int i = 1; i < n; i++) {
             if (A[i] > max)
                 max = A[i];
+            iterations++;
         }
         return max;
     }
@@ -145,6 +184,8 @@ public class App {
         // return (max1 > max2) ? max1 : max2;
         // }
         // ```
+
+        iterations++;
 
         if (n == 1)
             return A[0];
@@ -176,7 +217,9 @@ public class App {
         // else
         // return half + half + b;
         // }
-        // ```
+        // ``
+
+        iterations++;
 
         if (a == 0 || b == 0)
             return 0;
@@ -193,6 +236,9 @@ public class App {
         // 4.2 Multiplica duas strings de bits x e y
         // e retorna o resultado como um inteiro "long".
         // public static long multiply(String X, String Y);
+        // ! mudar para iteração
+
+        iterations++;
 
         return Integer.parseInt(X, 2) * Integer.parseInt(Y, 2);
     }

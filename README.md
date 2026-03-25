@@ -60,7 +60,7 @@
    }
    ```
     
-4. A Multiplicação Inteira de n-bits recebe dois números inteiros x e y de n-bits e retorna o resutado de x * y.
+4.1. A Multiplicação Inteira de n-bits recebe dois números inteiros x e y de n-bits e retorna o resutado de x * y.
   
    Assim, novamente:
   
@@ -85,6 +85,9 @@
   ```
 
   Ajuste a assinatura da sua implementação para receber tipo inteiros long (em java).
+
+4.2. Multiplica duas strings de bits x e y e retorna o resultado como um inteiro "long".
+    public static long multiply(String X, String Y);
       
 5. Monte uma tabela com os resultados das execuções acima. As linhas da tabela são os algoritmos implementados, as colunas o tamanho dos vetores usados para testar e contabilizar.
 (número de recursões de cada execução)

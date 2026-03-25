@@ -11,7 +11,8 @@ public class App {
         long[] testArray2 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         // 1
-        System.out.println("Merge Sort: " + java.util.Arrays.toString(mergeSort(testArray)));
+        // System.out.println("Merge Sort: " +
+        // java.util.Arrays.toString(mergeSort(testArray)));
 
         // 2
         // System.out.println("Max Value: " + maxVal1(testArray2, testArray2.length));
@@ -20,8 +21,11 @@ public class App {
         // System.out.println("Max Value (Divide and Conquer): " + maxVal2(testArray2,
         // testArray2.length));
 
-        // 4
+        // 4.1
         // System.out.println("Multiply: " + multiply(10, 10));
+
+        // 4.2
+        System.out.println("Multiply Strings: " + multiply("111", "101"));
 
     }
 
@@ -150,7 +154,7 @@ public class App {
     }
 
     public static int multiply(int a, int b) {
-        // 4. O algoritmo a seguir (que utiliza divisão-e-conquista) realiza a
+        // 4.1 O algoritmo a seguir (que utiliza divisão-e-conquista) realiza a
         // multiplicação de dois números inteiros.
 
         // Assim, novamente:
@@ -183,6 +187,14 @@ public class App {
             return half + half;
         else
             return half + half + b;
+    }
+
+    public static long multiply(String X, String Y) {
+        // 4.2 Multiplica duas strings de bits x e y
+        // e retorna o resultado como um inteiro "long".
+        // public static long multiply(String X, String Y);
+
+        return Integer.parseInt(X, 2) * Integer.parseInt(Y, 2);
     }
 
 }
